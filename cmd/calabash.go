@@ -88,5 +88,8 @@ func main() {
 	})
 
 	// Run the gin server
-	srv.Run()
+	err := srv.Run()
+	if err != nil {
+		panic(err)
+	}
 }
