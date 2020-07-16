@@ -32,7 +32,7 @@ func main() {
 		// Start a new and fresh session
 		session.Start()
 		// Run this new session
-		go state.Run(&session)
+		go session.Run()
 
 		// Return an OK status plus the current state
 		c.JSON(http.StatusOK, &session)

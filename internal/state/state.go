@@ -166,7 +166,7 @@ func (s *Session) Terminate() {
 }
 
 // Run starts a ticker within a session
-func Run(s *Session) {
+func (s *Session)Run() {
 	// Start a new ticker, tick on every second
 	ticker := time.NewTicker(1 * time.Second)
 	defer ticker.Stop()
