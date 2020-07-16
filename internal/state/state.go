@@ -66,7 +66,6 @@ type Session struct {
 // Start a new pomodo session
 func (s *Session) Start() {
 	s.StartedAt = time.Now()
-	s.Running = true
 	s.Started = true
 	s.Status = Working
 }
@@ -167,6 +166,7 @@ func (s *Session) Terminate() {
 
 // Run starts a ticker within a session
 func (s *Session)Run() {
+	s.Running = true
 	// Start a new ticker, tick on every second
 	ticker := time.NewTicker(1 * time.Second)
 	defer ticker.Stop()
